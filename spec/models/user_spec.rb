@@ -22,7 +22,7 @@ describe User, type: :model do
     
     let(:user) { FactoryBot.create(:user) }
   
-    it "should accept valid email addresses on create" do
+    it "should accept valid email addresses" do
       valid_emails = %w[user@foo.com THE_user@foo.bar.org first.last@foo.jp test@yopmail2.com test@222test.com testing@yopmail22.com2 test@2yop2.io]
       valid_emails.each do |valid_email|
         user.email = valid_email
