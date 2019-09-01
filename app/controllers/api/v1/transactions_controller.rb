@@ -2,7 +2,7 @@ class Api::V1::TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
-    @transaction.transaction_date = Time.new
+    @transaction.transaction_date = DateTime.now
     @transaction.user_id = params[:user_id]
     @transaction.latitude = params[:transaction][:latitude]
     @transaction.longitude = params[:transaction][:longitude]
