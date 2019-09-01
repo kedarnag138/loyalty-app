@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   def render_objects(objects, klass)
     if objects.present?
       if klass == User
-        render json: { data: { results: objects.map { |object| serializer.new(object, scope: { action_name: action_name, controller_name: controller_name }).serializable_hash }, status: { 'code': 200, 'errorDetail': '', 'message': 'OK' } } }
+        render json: { data: { results: objects.map { |object| serializer.new(object, scope: { action_name: action_name, controller_name: controller_name }).serializable_hash } }, status: { 'code': 200, 'errorDetail': '', 'message': 'OK' } }
       end
     else
       render json: { status: { 'code': 204, 'errorDetail': 'Nothing to display', 'message': 'NO CONTENT' } }

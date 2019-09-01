@@ -23,6 +23,12 @@ group :development, :test do
   gem 'pry', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
+  gem 'rspec-json_expectations'
+  gem 'json_expressions'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do
