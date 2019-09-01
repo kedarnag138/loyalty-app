@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_09_01_080821) do
   enable_extension "plpgsql"
 
   create_table "points", force: :cascade do |t|
-    t.string "value"
+    t.integer "earned"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
