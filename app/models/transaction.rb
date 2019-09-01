@@ -12,6 +12,13 @@ class Transaction < ApplicationRecord
     longitude = self.longitude
     latitude_longitude = "#{latitude},#{longitude}"
     response = Geocoder.search(latitude_longitude).first
+    if response.data["address"]["country"] == "Singapore"
+      if self.amount.to_i >= 100
+        Point.create(value: 10, location: response.data["address"]["country"])
+      end
+    else
+      Point.create(value: 10 * 2, location: response.data["address"]["country"])
+    end
   end
 
 end
