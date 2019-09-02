@@ -5,6 +5,8 @@ class Transaction < ApplicationRecord
 
   geocoded_by latitude: :latitude, longitude: :longitude
 
+  validates_presence_of :amount, :user_id
+
   validate :generate_points_based_on_location
 
   def generate_points_based_on_location
