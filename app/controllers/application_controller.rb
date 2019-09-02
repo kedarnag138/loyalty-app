@@ -22,4 +22,8 @@ class ApplicationController < ActionController::API
     render json: { status: { "code": 200, "errorDetail": "", "message": "OK" }, data: { result: serializer.new(object).serializable_hash } }
   end
 
+  def show_entity(object)
+    render json: { data: { result: serializer.new(object).serializable_hash }, status: { 'code': 200, 'errorDetail': '', 'message': 'OK' } }
+  end
+
 end
